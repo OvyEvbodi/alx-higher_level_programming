@@ -1,15 +1,13 @@
 #!/usr/bin/python3
-
-# list all the names defined by a compiled module
 import hidden_4
 
 
-def list_names():
+def discovr():
     names = dir(hidden_4)
     for name in names:
-        if name != '__':
+        if name[:2] != '__':
             print("{:s}".format(name))
 
 
 if __name__ == "__main__":
-    list_names()
+    discovr()
