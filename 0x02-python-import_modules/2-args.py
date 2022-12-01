@@ -11,7 +11,7 @@ if __name__ == "main":
             print(f"{argc} argument:")
         else:
             print(f"{argc} arguments:")
-        while i < argc:
-            print(f"{i}: {argc}")
+        while i <= argc:
+            print(f"{i}: {argv[i - 1]}")
             i += 1
     print_arg_list(argv)
