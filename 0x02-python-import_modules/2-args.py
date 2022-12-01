@@ -6,7 +6,7 @@ def print_arg_list():
     argc = len(argv)
     i = 1
     if argc == 1:
-        print("{:d} argument.".format(argc - 1))
+        print("{:d} arguments.".format(argc - 1))
     elif argc == 2:
         print("{:d} argument:".format(argc - 1))
     else:
