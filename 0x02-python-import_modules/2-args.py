@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from sys import argv
 
+
 def print_arg_list():
     argc = len(argv)
     i = 1
