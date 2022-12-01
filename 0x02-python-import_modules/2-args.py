@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+from sys import argv
 
-
-def print_arg_list(args):
+def print_arg_list():
     argc = len(argv)
     i = 1
     if argc == 1:
@@ -14,6 +14,6 @@ def print_arg_list(args):
         print("{:d}: {:s}".format(i, argv[i - 1]))
         i += 1
 
+
 if __name__ == "__main__":
-    from sys import argv as argv
-    print_arg_list(argv)
+    print_arg_list()
