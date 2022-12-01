@@ -5,9 +5,9 @@ if __name__ == "__main__":
     def print_arg_list(args):
         argc = len(argv)
         i = 1
-        if argc == 0:
+        if argc == 1:
             print("{:d} argument.".format(argc))
-        elif argc == 1:
+        elif argc == 2:
             print("{:d} argument:".format(argc))
         else:
             print("{:d} arguments:".format(argc))
