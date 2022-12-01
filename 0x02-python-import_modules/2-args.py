@@ -6,11 +6,11 @@ def print_arg_list():
     argc = len(argv)
     i = 1
     if argc == 1:
-        print("{:d} argument.".format(argc))
+        print("{:d} argument.".format(argc - 1))
     elif argc == 2:
-        print("{:d} argument:".format(argc))
+        print("{:d} argument:".format(argc - 1))
     else:
-        print("{:d} arguments:".format(argc))
+        print("{:d} arguments:".format(argc - 1))
     while i <= argc:
         print("{:d}: {:s}".format(i, argv[i]))
         i += 1
