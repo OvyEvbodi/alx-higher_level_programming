@@ -12,7 +12,7 @@ def print_arg_list():
     else:
         print("{:d} arguments:".format(argc))
     while i <= argc:
-        print("{:d}: {:s}".format(i, argv[i - 1]))
+        print("{:d}: {:s}".format(i, argv[i]))
         i += 1
 
 
