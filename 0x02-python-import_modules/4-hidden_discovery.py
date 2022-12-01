@@ -7,7 +7,7 @@ import hidden_4
 def list_names():
     names = dir(hidden_4)
     for name in names:
-        if name != "__":
+        if name != '__':
             print("{:s}".format(name))
 
 
