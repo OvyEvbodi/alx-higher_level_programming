@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-from sys import argv
 
 
 def print_arg_list():
+    from sys import argv
     argc = len(argv)
     i = 1
     if argc == 1:
