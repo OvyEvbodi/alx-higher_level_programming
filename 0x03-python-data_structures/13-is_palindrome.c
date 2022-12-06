@@ -13,21 +13,21 @@ int is_palindrome(listint_t **head)
 	listint_t *rev_list = malloc(sizeof(listint_t));
 	listint_t *temp = malloc(sizeof(listint_t));
 
-    if (!temp || !rev_list)
-    {
-        exit(EXIT_FAILURE);
-    }
+	if (!temp || !rev_list)
+	{
+		exit(EXIT_FAILURE);
+	}
 
 	if (!(*head))
 		return (0);
 	temp = *head;
 	rev_list = NULL;
-    while (temp)
-    {
-        add_nodeint_end(&rev_list, temp->n);
-        temp = temp->next;
-    }
-    temp = *head;
+	while (temp)
+	{
+		add_nodeint_end(&rev_list, temp->n);
+		temp = temp->next;
+	}
+	temp = *head;
 	reverse_listint(&rev_list);
 
 	while (temp)
