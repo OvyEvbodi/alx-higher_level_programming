@@ -38,15 +38,11 @@ int is_palindrome(listint_t **head)
 	{
 		if (temp->n != rev_list->n)
 		{
-			free(rev_list);
-			free(temp);
 			return (0);
 		}
 		temp = temp->next;
 		rev_list = rev_list->next;
 	}
-	free(rev_list);
-	free(temp);
 	return (1);
 }
 
