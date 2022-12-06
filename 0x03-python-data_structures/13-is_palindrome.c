@@ -10,20 +10,11 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *rev_list = malloc(sizeof(listint_t));
-	listint_t *temp = malloc(sizeof(listint_t));
-
-	if (!temp || !rev_list)
-	{
-		exit(EXIT_FAILURE);
-	}
+	listint_t *rev_list;
+	listint_t *temp;
 
 	if (!(*head))
-	{
-		free(rev_list);
-		free(temp);
-		return (0);
-	}
+		exit(EXIT_FAILURE);
 	temp = *head;
 	rev_list = NULL;
 	while (temp)
