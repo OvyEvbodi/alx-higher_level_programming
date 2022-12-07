@@ -14,8 +14,8 @@ of the argument, at their corresponding indices.
 
 
 def square_matrix_simple(matrix=[]):
-    new = []
     if matrix:
+        new = []
         for row in matrix:
             new.append(list(map(lambda x: x**2, row)))
     return new
