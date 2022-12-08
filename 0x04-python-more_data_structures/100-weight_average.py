@@ -12,13 +12,11 @@ RETURN: the resulting weighted average
 
 
 def weight_average(my_list=[]):
-    avg = 0
-    weight_total = 0
+    avg, weight_total = 0
     if not my_list:
-        return avg
-    for tup in my_list:
-        score, weight = tup
-        avg += score * weight
-        weight_total += weight
-    avg /= weight_total
+        for tup in my_list:
+            score, weight = tup
+            avg += score * weight
+            weight_total += weight
+        avg /= weight_total
     return avg
