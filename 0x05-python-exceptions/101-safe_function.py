@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 '''
 safe_function - executes a function safely
 
