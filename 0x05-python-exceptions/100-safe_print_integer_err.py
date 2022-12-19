@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import sys
+
 
 '''
 safe_print_integer - prints an integer with "{:d}".format(),
@@ -16,7 +18,6 @@ def safe_print_integer_err(value):
     try:
         print("{:d}".format(value))
     except ValueError as ve:
-        print("Exception: ", end="")
-        print("{}".format(ve))
+        print("Exception: {}".format(ve), file=sys.stderr)
         return False
     return True
