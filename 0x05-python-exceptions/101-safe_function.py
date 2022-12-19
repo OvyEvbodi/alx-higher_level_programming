@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import sys
+
 '''
 safe_function - executes a function safely
 
@@ -15,5 +17,5 @@ def safe_function(fct, *args):
     try:
         return fct(*args)
     except Exception as err:
-        print("Exception: {}".format(err))
+        print("Exception: {}".format(err), file=sys.stderr)
         return
