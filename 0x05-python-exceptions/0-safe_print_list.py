@@ -20,6 +20,6 @@ def safe_print_list(my_list=[], x=0):
             print(f"{my_list[i]}", end="")
             num += 1
         except IndexError:
-            return num
+            break
     print()
-    return x
+    return num
