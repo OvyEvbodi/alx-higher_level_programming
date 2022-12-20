@@ -11,7 +11,8 @@ class Square:
         ''' Initializes an instance of the Square class
         Args:
             size (int): the size of 1 side of a square
-        Returns: None
+        Returns:
+            None
         '''
         if type(size) is not int:
             raise TypeError("size must be an integer")
@@ -21,6 +22,7 @@ class Square:
 
     def area(self):
         ''' Calculates the area of a Square instance
-                Returns: the area of the square
+                Returns:
+                    the area of the square
         '''
         return self.__size * self.__size

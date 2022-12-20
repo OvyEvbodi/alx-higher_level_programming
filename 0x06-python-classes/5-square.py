@@ -42,3 +42,12 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
+    def my_print(self):
+        count = self.__size
+        if count == 0:
+            print()
+        for i in range(count):
+            for i in range(count):
+                print("#", end="")
+            print()
