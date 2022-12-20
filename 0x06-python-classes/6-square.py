@@ -60,15 +60,13 @@ class Square:
     def my_print(self):
         count = self.__size
         pos = self.__position
-        spaces = pos[0]
-        if pos[1] > 0:
-            spaces = 0
         if count == 0:
             print()
+        for i in range(pos[1]):
+            print()
         for i in range(count):
-            if spaces:
-                for i in range(spaces):
-                    print(" ", end="")
+            for i in range(pos[0]):
+                print(" ", end="")
             for i in range(count):
                 print("#", end="")
             print()
