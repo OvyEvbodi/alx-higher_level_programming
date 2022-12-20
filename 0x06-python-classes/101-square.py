@@ -17,6 +17,19 @@ class Square:
         self.__size = size
         self.__position = position
 
+    def __str__(self):
+        """Sets the print behavior of the Square object."""
+        square_str = ""
+
+        if self.__size > 0:
+            for y in range(self.__position[1]):
+                square_str += '\n'
+            for x in range(self.__size):
+                square_str += ' ' * self.__position[0]
+                square_str += '#' * self.__size + '\n'
+
+        return square_str[:-1]
+
     def area(self):
         ''' Calculates the area of a Square instance
         Returns:
