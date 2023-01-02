@@ -97,7 +97,7 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         '''Finds the bigger of 2 rectangles
-        
+
         Args:
         rect_1: the first rectanngle
         rect_2: the second rectangle
