@@ -35,7 +35,7 @@ class Rectangle:
         '''Sets the width attribute of a rectangle'''
         if type(value) != int:
             raise TypeError("width must be an integer")
-        if width < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
@@ -49,7 +49,7 @@ class Rectangle:
         '''Sets the height attribute of a rectangle'''
         if type(value) != int:
             raise TypeError("height must be an integer")
-        if height < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
@@ -93,3 +93,24 @@ class Rectangle:
         '''Deletes an instance of a rectangle'''
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        '''Finds the bigger of 2 rectangles
+        
+        Args:
+        rect_1: the first rectanngle
+        rect_2: the second rectangle
+
+        Returns:
+        rect_2, if it's bigger than rect_1,
+        otherwise, rect_1
+        '''
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_2.area() > rect_1.area():
+            return rect_2
+        else:
+            return rect_1
