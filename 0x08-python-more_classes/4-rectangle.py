@@ -65,6 +65,13 @@ class Rectangle:
             return 0
         return 2 * (self.__width + self.__height)
 
+    def __repr__(self):
+        '''Returns the canonical string representation of the object
+        Returns:
+            The canonical string representation of the object
+        '''
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
     def __str__(self):
         '''Creates a new string object from the given object
         Returns:
