@@ -80,7 +80,7 @@ class Rectangle:
         rect_str = ""
         if self.__height == 0 or self.__width == 0:
             return rect_str
-        rect_print = [str(self.print_symbol) * self.width
+        rect_print = [str("#") * self.width
                       for i in range(self.height)]
         rect_str = '\n'.join(rect_print)
         return rect_str
