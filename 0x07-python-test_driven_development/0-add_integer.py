@@ -17,7 +17,8 @@ def add_integer(a, b=98):
     >>> add_integer(2, 5)
     7
 
-    It also works with floating point numbers, but the result is always an integer.
+    It also works with floating point numbers,
+    but the result is always an integer.
     For example:
     >>> add_integer(7.0, 2.67)
     9
@@ -25,7 +26,7 @@ def add_integer(a, b=98):
     Raises:
         A TypeError for non int or non float datatypes
     '''
- 
+
     if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
     if type(b) not in [int, float]:
