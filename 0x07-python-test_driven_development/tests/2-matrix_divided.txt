@@ -1,0 +1,50 @@
+=========================
+``matrix_divided`` module
+=========================
+
+This file tests that the ``matrix_divided`` function
+accurately divides all elements of a matrix.
+
+Preliminary Step: Import the module
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Try it with a matrix of lists of integers
+    >>> matrix_divided([[6,7], [89, 8]], 3)
+    [[2.0, 2.33], [29.67, 2.67]]
+
+The matrix must be a list comprised of lists,
+otherwise, a TypeError exception is raised.
+For example:
+    >>> matrix = [
+    ... [1, 2, 3],
+    ... [4, 5, 6],
+    ... 45, 67
+    ... ]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+All vectors of the matrix must not be of varying lengths,
+otherwise, a TypeError exception is raised.
+    >>> matrix = [
+    ... [1, 2, 3],
+    ... [4, 5, 6],
+    ... [7, 8]
+    ... ]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Division by zero raises a ZeroDivision TypeError.
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+The divisor must be of type int or float.
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], [2])
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
