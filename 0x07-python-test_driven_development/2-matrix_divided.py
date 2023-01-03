@@ -13,6 +13,23 @@ def matrix_divided(matrix, div):
 
     Returns:
         A new matrix comprised of the corresponding quotients
+
+    Raises:
+        TypeError: if matrix is not a list instance;
+        if matrix is not comprised of list instance vectors,
+            made up fo ints or floats;
+        if div is neither an instance of int nor float
+
+        ZeroDivisionError: if div is equal to 0
+
+    Examples:
+        >>> matrix_divided([[6,7], [89, 8]], 3)
+        [[2.0, 2.33], [29.67, 2.67]]
+        >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+        Traceback (most recent call last):
+        ...
+        ZeroDivisionError: division by zero
+
     '''
 
     if not isinstance(matrix, list) or not all(isinstance(row, list)
