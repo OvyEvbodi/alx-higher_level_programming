@@ -1,0 +1,40 @@
+======================
+``add-integer`` module
+======================
+
+This file tests that the ``add_integer`` function correctly adds two integers.
+
+Step 1: Import the module
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Step 2: Try it with 2 integers
+    >>> add_integer(2, 5)
+    7
+
+It also works with floating point numbers, but the result is always an integer.
+For example:
+    >>> add_integer(7.0, 2.67)
+    9
+
+It raises a TypeError exception, when other datatypes are passed.
+Try it with invalid datatypes
+    >>> add_integer("Hello", "World")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(6863, "World")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+It accepts one mandatory argument, or a maximum of 2 arguments.
+If only 1 argument is passed, the return value is the result of the argument and 98.
+For example:
+    >>> add_integer(100.0)
+    198
+
+Negative numbers are added as in regular mathematical operations.
+    >>> b = -6
+    >>> add_integer(-68, b)
+    -74
