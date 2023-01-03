@@ -1,0 +1,13 @@
+=========================
+``say_my_name`` module
+=========================
+
+This file tests that the ``say_my_name`` function
+accurately prints the string "My name is <first name> <last name>".
+
+Preliminary step: Import the module.
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Try it with 2 strings
+    >>> say_my_name("Ovy", "Evbodi")
+    My name is Ovy Evbodi
