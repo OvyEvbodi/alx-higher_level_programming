@@ -11,3 +11,18 @@ Preliminary step: Import the module.
 Try it with 2 strings
     >>> say_my_name("Ovy", "Evbodi")
     My name is Ovy Evbodi
+
+Only one name mandatory, and it shall be regarded as the first name.
+    >>> say_my_name("Vee")
+    My name is Vee 
+
+Both arguments must be strings, otherwise, a Typeerror exception is raised.
+    >>> say_my_name(2, "Evbodi")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Ovo", ["Evbodi"])
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
