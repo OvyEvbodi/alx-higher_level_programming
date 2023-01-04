@@ -1,4 +1,4 @@
-#!/usr/bin/pyython3
+#!/usr/bin/python3
 
 '''This module divides all elements of a matrix.
 It contains 1 function ``matrix_divided``
