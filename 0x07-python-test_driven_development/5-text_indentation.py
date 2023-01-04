@@ -17,6 +17,13 @@ def text_indentation(text):
 
     Raises:
         TypeError: if text is nt an instance of string
+    Examples:
+        >>> text_indentation("This is a text that breaks here. and here? but not here,")
+        This is a text that breaks here.
+        <BLANKLINE>
+        and here?
+        <BLANKLINE>
+        but not here,
     '''
     delimiters = ['.', '?', ':']
     if not isinstance(text, str):
