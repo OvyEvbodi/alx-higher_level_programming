@@ -1,0 +1,43 @@
+=========================
+``text_indentation`` module
+=========================
+
+This file tests that the ``text_indentation`` function
+accurately prints a text with 2 new lines after each of these characters:
+"., ? and :".
+
+Preliminary step: Import the module.
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Try it
+    >>> text_indentation("This is a text that breaks here. and here? but not here,")
+    This is a text that breaks here.
+    <BLANKLINE>
+    and here?
+    <BLANKLINE>
+    but not here,
+
+    >>> text_indentation("Lorem ipsum. dolor sit amet?? consectetur adipiscing elit.")
+    Lorem ipsum.
+    <BLANKLINE>
+    dolor sit amet?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    consectetur adipiscing elit.
+    <BLANKLINE>
+
+    >>> text_indentation(2468)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation(2468.98)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation(["Hello . World"])
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
