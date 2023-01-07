@@ -15,7 +15,8 @@ def say_my_name(first_name, last_name=""):
     Raises:
         TypeError: When either first_name or last_name is not of type str
     Examples:
-        >>>
+        >>> say_my_name("Ovy", "Evbodi")
+        My name is Ovy Evbodi
     '''
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
