@@ -19,7 +19,7 @@ def text_indentation(text):
         TypeError: if text is nt an instance of string
     Examples:
         >>> text_indentation("This is a text that breaks here.
-	... and here? but not here,")
+        ... and here? but not here,")
         This is a text that breaks here.
         <BLANKLINE>
         and here?
