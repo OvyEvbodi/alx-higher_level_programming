@@ -1,0 +1,49 @@
+=========================
+``my_list`` module
+=========================
+
+This file tests that the ``MyList`` class
+inherits from the class ``list``.
+
+Preliminary step: Import the module.
+    >>> MyList = __import__('1-my_list').MyList
+
+Try it with a list of integers
+    >>> new_list = MyList([7, 8, 4, 0, 23, 908, 456, 76])
+    >>> print(new_list)
+    [7, 8, 4, 0, 23, 908, 456, 76]
+
+    >>> new_list.print_sorted()
+    [0, 4, 7, 8, 23, 76, 456, 908]
+
+Try it with list methods
+    >>> list_2 = MyList()
+    >>> list_2.append(89)
+    >>> list_2.extend([7, 45, 23, 11])
+    >>> print(list_2)
+    [89, 7, 45, 23, 11]
+
+
+    >>> list_2.print_sorted()
+    [7, 11, 23, 45, 89]
+
+Try it with a list of strings
+    >>> fruits = MyList(["bananas", "mangoes", "cherries", "strawberries", "apple"])
+    >>> print(fruits)
+    ['bananas', 'mangoes', 'cherries', 'strawberries', 'apple']
+
+    >>> fruits.print_sorted()
+    ['apple', 'bananas', 'cherries', 'mangoes', 'strawberries']
+
+Try it with an empty list
+    >>> empty = MyList()
+    >>> empty.print_sorted()
+    []
+
+Try it with a string
+    >>> letters = MyList("Hello World")
+    >>> print(letters)
+    ['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd']
+
+    >>> letters.print_sorted()
+    [' ', 'H', 'W', 'd', 'e', 'l', 'l', 'l', 'o', 'o', 'r']
