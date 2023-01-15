@@ -114,7 +114,11 @@ class Rectangle(Base):
         with the character #
         """
 
+        if self.y:
+            print("" * self.y)
         for i in range(self.height):
+            if self.x:
+                print(" " * self.x, end="")
             print("#" * self.width)
 
     def __str__(self):
