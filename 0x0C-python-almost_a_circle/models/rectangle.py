@@ -23,28 +23,37 @@ class Rectangle(Base):
 
         super().__init__(id)
 
-        self.validate_attr(width)
+        self.validate_attr(width, "width", 1)
         self.width = width
 
-        self.validate_attr(height)
+        self.validate_attr(height, "height", 1)
         self.height = height
 
-        self.validate_attr(x)
+        self.validate_attr(x, "x")
         self.x = x
 
-        self.validate_attr(y)
+        self.validate_attr(y, "y")
         self.y = y
 
     @staticmethod
-    def validate_attr(value):
+    def validate_attr(value, name, dim=0):
         """validates an attribute,
         and raises the appropriate exception
-        
+
         Args:
-            value: the attribute to be validated
+            value: the value to be validated
+            name: the name of the attribute
+            dim: whether the attribute height/width (non-zero value for yes)
         """
-        if value < 0:
-            raise ValueError
+
+        if not dim:
+            if value < 0:
+                raise ValueError(f"{name} must be >= 0")
+        else:
+            if value <= 0:
+                raise ValueError(f"{name} must be > 0")
+            if type(value) != int:
+                raise TypeError(f"{name} must be an integer")
 
 
     @property
@@ -55,7 +64,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """sets the width attribute of a rectangle"""
-        self.validate_attr(value)
+        self.validate_attr(value, "width", 1)
         self.__width = value
 
     @property
@@ -66,7 +75,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """sets the height attribute of a rectangle"""
-        self.validate_attr(value)
+        self.validate_attr(value, "height", 1)
         self.__height = value
 
     @property
@@ -77,7 +86,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """sets the x attribute of a rectangle"""
-        self.validate_attr(value)
+        self.validate_attr(value, "x")
         self.__x = value
 
     @property
@@ -88,5 +97,13 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """sets the y attribute of a rectangle"""
-        self.validate_attr(value)
+        self.validate_attr(value, "y")
         self.__y = value
+
+    def area(self):
+        """calculates the area of a rectangle
+        
+        Returns:
+            the area of the rectangle
+        """
+        return self.__width * self.__height
