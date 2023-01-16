@@ -47,12 +47,13 @@ class Rectangle(Base):
         """
 
         if not dim:
+            if type(value) != int:
+                raise TypeError(f"{name} must be an integer")
             if value < 0:
                 raise ValueError(f"{name} must be >= 0")
         else:
             if type(value) != int:
                 raise TypeError(f"{name} must be an integer")
-
             if value <= 0:
                 raise ValueError(f"{name} must be > 0")
 
@@ -139,7 +140,10 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         i = 0
-        attr = ["id", "width", "height", "x", "y"]
+        if kwargs and len(kwargs) > 0:
+            for arg_name, arg in kwargs.items():
+                setattr(self, arg_name, arg)
+        attr = ("id", "width", "height", "x", "y")
         for arg in args:
             setattr(self, attr[i], arg)
             i += 1
