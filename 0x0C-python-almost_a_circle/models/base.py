@@ -81,12 +81,15 @@ class Base:
 
             Args:
                 dictionary(dict): a dictionary
+
+            Returns:
+                an instance
         """
 
         if cls.__name__ == "Rectangle":
             obj = cls(1, 1)
         elif cls.__name__ == "Square":
-            obj = Square(1)
+            obj = cls(1)
         obj.update(**dictionary)
         return obj
 
