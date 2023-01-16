@@ -80,7 +80,7 @@ class Base:
             Returns an instance with all the attributes already set
 
             Args:
-                dictionary(dict): 
+                dictionary(dict): a dictionary
         """
 
         if cls.__name__ == "Rectangle":
