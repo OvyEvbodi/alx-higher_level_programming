@@ -139,6 +139,8 @@ class Rectangle(Base):
                 "x": self.__x, "y": self.__y}
 
     def update(self, *args, **kwargs):
+        """updates the attributes of a rectangle instance"""
+
         i = 0
         if kwargs and len(kwargs) > 0:
             for arg_name, arg in kwargs.items():
