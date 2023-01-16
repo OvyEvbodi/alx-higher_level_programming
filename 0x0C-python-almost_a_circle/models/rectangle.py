@@ -136,3 +136,10 @@ class Rectangle(Base):
 
         return {"id": self.id, "width": self.__width, "height": self.__height,
                 "x": self.__x, "y": self.__y}
+
+    def update(self, *args, **kwargs):
+        i = 0
+        attr = ["id", "width", "height", "x", "y"]
+        for arg in args:
+            setattr(self, attr[i], arg)
+            i += 1
