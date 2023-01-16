@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""This module defins a base class"""
+"""This module defines a base class"""
 
 import json
 import csv
@@ -37,7 +37,7 @@ class Base:
         """
 
         if not list_dictionaries:
-            return []
+            return "[]"
         if not type(list_dictionaries) == list or not all(
                 type(item) == dict for item in list_dictionaries):
             raise TypeError
@@ -78,6 +78,9 @@ class Base:
     def create(cls, **dictionary):
         """
             Returns an instance with all the attributes already set
+
+            Args:
+                dictionary(dict): 
         """
 
         if cls.__name__ == "Rectangle":
