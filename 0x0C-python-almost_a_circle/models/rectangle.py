@@ -116,7 +116,7 @@ class Rectangle(Base):
         """
 
         if self.y:
-            print("" * self.y)
+            print("\n" * self.y)
         for i in range(self.height):
             if self.x:
                 print(" " * self.x, end="")
