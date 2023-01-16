@@ -4,8 +4,8 @@
 It inherits from the ``Base`` class in base.py
 """
 
-#Base = __import__('models').base.Base
 from models.base import Base
+
 
 class Rectangle(Base):
     """defines a rectangle"""
@@ -55,7 +55,6 @@ class Rectangle(Base):
             if type(value) != int:
                 raise TypeError(f"{name} must be an integer")
 
-
     @property
     def width(self):
         """gets the width attribute of a rectangle"""
@@ -102,7 +101,7 @@ class Rectangle(Base):
 
     def area(self):
         """calculates the area of a rectangle
-        
+
         Returns:
             the area of the rectangle
         """
@@ -122,5 +121,16 @@ class Rectangle(Base):
             print("#" * self.width)
 
     def __str__(self):
+        """updates the string representation of a rectangle
+
+        Returns:
+            the string representation of a rectangle
+        """
+
         return f"[Rectangle] ({self.id}) {self.__x}/" + \
-        f"{self.__y} - {self.__width}/{self.__height}"
+               f"{self.__y} - {self.__width}/{self.__height}"
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+
+        return {"id": self.id, "width": self.__width, "height": self.__height, "x": self.__x, "y": self.__y}
