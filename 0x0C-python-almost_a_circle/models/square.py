@@ -35,3 +35,15 @@ class Square(Rectangle):
         """sets the size attribute of a sqquare"""
         self.validate_attr(value, "width", 1)
         self.width = value
+
+    def update(self, *args, **kwargs):
+        """updates the attributes of a rectangle instance"""
+
+        i = 0
+        if kwargs and len(kwargs) > 0:
+            for arg_name, arg in kwargs.items():
+                setattr(self, arg_name, arg)
+        attr = ("id", "size", "x", "y")
+        for arg in args:
+            setattr(self, attr[i], arg)
+            i += 1
