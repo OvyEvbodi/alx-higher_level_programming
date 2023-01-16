@@ -33,5 +33,5 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """sets the size attribute of a sqquare"""
-        self.validate_attr(value, "size", 1)
+        self.validate_attr(value, "width", 1)
         self.width = value
