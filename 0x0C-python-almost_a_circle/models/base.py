@@ -58,13 +58,13 @@ class Base:
         filename = cls.__name__ + ".json"
         if not list_objs:
             return []
-            if not all(type(item, cls) for item in list_objs):
-                raise TypeError(
-                       "list_obj must contain instance(s) of the Base class")
-            json_str = cls.to_json_string(
-                        [item.to_dictionary for item in list_objs])
-            with open(filename, 'w') as f:
-                json.load(json_str)
+        if not all(type(item, cls) for item in list_objs):
+            raise TypeError(
+                   "list_obj must contain instance(s) of the Base class")
+        json_str = cls.to_json_string(
+                    [item.to_dictionary for item in list_objs])
+        with open(filename, 'w') as f:
+            json.load(json_str)
 
     @staticmethod
     def from_json_string(json_string):
@@ -95,10 +95,10 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        '''
+        """
             loads dict representing an
             instance and from that creating instances
-        '''
+        """
         file_name = cls.__name__ + ".json"
 
         try:
