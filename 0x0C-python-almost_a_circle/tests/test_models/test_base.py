@@ -78,10 +78,16 @@ class TestBaseClass(unittest.TestCase):
         self.assertIsNotNone(Base.from_json_string.__doc__)
 
     def test_create(self):
+        """checks that rectangle and square instances are created"""
         obj_1 = Square(20)
         obj_1_dict = obj_1.to_dictionary()
         obj_2 = Square.create(**obj_1_dict)
         self.assertFalse(obj_1 is obj_2)
 
     def test_load_from_file(self):
+        """checks that an instance is loaded from a file"""
         self.assertIsNotNone(Base.load_from_file.__doc__)
+
+
+if __name__ == "__main__":
+    unittest.main()
