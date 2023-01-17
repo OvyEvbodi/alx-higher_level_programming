@@ -93,6 +93,45 @@ class Base:
         return obj
 
     @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize key/value pairs for several instances of `Base`"""
+
+        filename = cls.__name__ + ".csv"
+        list_of_instances = []
+        if not path.exists(filename) or not path.isfile(filename):
+            return list_of_instances
+
+        with open(filename, 'r') as csvfile:
+            if cls.__name__ == "Rectangle":
+                attrs = ("id", "width", "height", "x", "y")
+            elif cls.__name__ == "Square":
+                attrs = ("id", "size", "x", "y")
+
+            rows = csv.reader(csvfile, delimiter=',')
+            for idx, row in enumerate(rows):
+                if idx == 0:
+                    continue
+
+                temp_instance = cls(1, 1)
+                for attr_idx, attr_value in enumerate(row):
+                    if attr_idx == len(attrs):
+                        raise AttributeError("Too many attributes given")
+
+                    # if rows not in attrs:
+                    #     raise AttributeError("Invalid attribute given")
+
+                    if attr_value:
+                        try:
+                            val = int(attr_value)
+                            setattr(temp_instance, attrs[attr_idx], int(val))
+                        except (TypeError, ValueError) as e:
+                            raise e("Unable to set attribute")
+
+                list_of_instances.append(temp_instance)
+
+        return list_of_instances
+
+    @classmethod
     def load_from_file(cls):
         """
             loads dict representing an

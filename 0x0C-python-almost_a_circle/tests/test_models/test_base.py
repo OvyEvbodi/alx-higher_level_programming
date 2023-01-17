@@ -85,4 +85,3 @@ class TestBaseClass(unittest.TestCase):
 
     def test_load_from_file(self):
         self.assertIsNotNone(Base.load_from_file.__doc__)
-
