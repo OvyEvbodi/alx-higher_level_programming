@@ -57,11 +57,13 @@ class Base:
 
         filename = cls.__name__ + ".json"
 
-        if list_objs and all(type(item) == cls for item in list_objs):
-            json_str = cls.to_json_string(
-                    [item.to_dictionary() for item in list_objs])
-            with open(filename, 'w') as f:
-                f.write(json_str)
+        if list_objs and not all(type(item) == cls for item in list_objs):
+            raise TypeError(
+                   "list_obj must contain instance(s) of the Base class")
+        json_str = cls.to_json_string(
+                [item.to_dictionary() for item in list_objs])
+        with open(filename, 'w') as f:
+            f.write(json_str)
 
     @staticmethod
     def from_json_string(json_string):

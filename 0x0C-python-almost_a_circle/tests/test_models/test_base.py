@@ -63,5 +63,4 @@ class TestBaseClass(unittest.TestCase):
             Rectangle.save_to_file([new_obj, 7])
         with self.assertRaises(TypeError):
             Rectangle.save_to_file([new_obj, new_obj_2])
-        self.assertEqual(new_obj.save_to_file([]), [])
         self.assertIsNotNone(Base.save_to_file.__doc__)
