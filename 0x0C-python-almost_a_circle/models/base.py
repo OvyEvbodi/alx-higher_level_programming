@@ -4,6 +4,7 @@
 
 import json
 import csv
+from os import path
 
 
 class Base:
@@ -91,6 +92,32 @@ class Base:
             obj = cls(1)
         obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serialize in csv
+        Args:
+            list_objs (list): List of objects
+        """
+
+        filename = cls.__name__ + ".csv"
+
+        if list_objs and type(list_objs) == list and all(
+                type(obj) == cls for obj in list_objs
+                ):
+            obj_dicts = [obj.to_dictionary() for obj in list_objs]
+        else:
+            list_objs = []
+            obj_dicts = [{}]
+
+        with open(filename, 'w', newline='') as csvfile:
+            if cls.__name__ == "Rectangle":
+                attrs = ("id", "width", "height", "x", "y")
+            elif cls.__name__ == "Square":
+                attrs = ("id", "size", "x", "y")
+
+            csv.DictWriter(csvfile, fieldnames=attrs).writeheader()
+            csv.DictWriter(csvfile, fieldnames=attrs).writerows(obj_dicts)
 
     @classmethod
     def load_from_file_csv(cls):
