@@ -64,3 +64,15 @@ class TestBaseClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle.save_to_file([new_obj, new_obj_2])
         self.assertIsNotNone(Base.save_to_file.__doc__)
+
+    def test_from_json_string(self):
+        """checks that a list object is returned
+        from a json strin representation"""
+        new_obj = Rectangle(10, 5)
+        new_obj_2 = Square(5)
+        obj = new_obj.to_json_string([new_obj_2.to_dictionary()])
+        list_obj = Rectangle.from_json_string(obj)
+        self.assertIsNotNone(list_obj)
+        self.assertEqual(type(list_obj), list)
+        self.assertEqual(Rectangle.from_json_string(""), [])
+
