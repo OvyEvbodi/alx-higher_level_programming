@@ -75,4 +75,14 @@ class TestBaseClass(unittest.TestCase):
         self.assertIsNotNone(list_obj)
         self.assertEqual(type(list_obj), list)
         self.assertEqual(Rectangle.from_json_string(""), [])
+        self.assertIsNotNone(Base.from_json_string.__doc__)
+
+    def test_create(self):
+        obj_1 = Square(20)
+        obj_1_dict = obj_1.to_dictionary()
+        obj_2 = Square.create(**obj_1_dict)
+        self.assertFalse(obj_1 is obj_2)
+
+    def test_load_from_file(self):
+        self.assertIsNotNone(Base.load_from_file.__doc__)
 
