@@ -2,4 +2,4 @@
 -- ``hbtn_0c_0`` in your MySQL server
 SELECT COUNT(id)
     FROM first_table
-    WHERE id=89;
+    WHERE id = 89;
