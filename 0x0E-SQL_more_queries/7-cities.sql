@@ -1,4 +1,4 @@
--- creates the database hbtn_0d_usa and the table cities
+-- Creates the database hbtn_0d_usa and the table cities
 -- (in the database hbtn_0d_usa) on your MySQL server
 
 CREATE DATABASE
@@ -10,5 +10,5 @@ CREATE TABLE
     state_id    INT    NOT NULL,
     name    VARCHAR(256)    NOT NULL
     FOREIGN KEY(state_id)
-    REFERENCES(hbtn_0d_usa.states.id)
+    REFERENCES hbtn_0d_usa.states.id
     );
