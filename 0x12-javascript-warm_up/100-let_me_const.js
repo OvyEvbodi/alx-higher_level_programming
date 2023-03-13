@@ -1,4 +1,4 @@
-#!/usr/bin/code
+#!/usr/bin/node
 //changes the value of myVar to 333
 
 myVar = 333;
