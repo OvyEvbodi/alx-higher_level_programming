@@ -1,18 +1,21 @@
 #!/usr/bin/node
 // searches the second biggest integer in the list of arguments
 
-let max = process.argv[2];
-let secMax = process.argv[2];
-
-if (!process.argv[2] || process.argv.length === 3) {
-  console.log(0);
-} else {
-  for (let i = 3; i < process.argv.length; i++) {
-    if (process.argv[i] > max) {
-      secMax = max;
-      max = process.argv[i];
+const getSecondMax = (arr) => {
+  let max = arr[2];
+  let secMax = arr[2];
+  
+  if ((arr.length === 2) || (arr.length === 3)) {
+    return (0);
+  } else {
+    for (let i = 3; i < arr.length; i++) {
+      if (arr[i] > max) {
+        secMax = max;
+        max = arr[i];
+      }
     }
+    return (secMax);
   }
 }
 
-console.log(secMax);
+console.log(getSecondMax(process.argv));
