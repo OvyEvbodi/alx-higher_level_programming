@@ -17,6 +17,6 @@ const getSecondMax = (arr) => {
       }
     }
     return (secMax);
-  }
+  };
 
 console.log(getSecondMax(process.argv));
