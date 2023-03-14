@@ -3,5 +3,5 @@
 // to another base passed as argument
 
 exports.converter = function (base) {
-  return num => parseInt(num, base);
+  return num => num.toString(base);
 };
