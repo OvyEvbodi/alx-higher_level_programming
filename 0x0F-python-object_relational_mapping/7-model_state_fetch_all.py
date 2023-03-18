@@ -16,7 +16,7 @@ def list_states():
     user = argv[1]
     password = argv[2]
     database = argv[3]
-    url = f"mysql+mysqldb://{user}:{password}@localhost:3306"
+    url = f"mysql+mysqldb://{user}:{password}@localhost:3306/{database}"
     engine = create_engine(url)
 
     Base.metadata.create_engine_all(engine)
