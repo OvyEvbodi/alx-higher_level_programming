@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-"""This module lists all states from a database
+"""This module lists all states from a database,
+where name starts with 'N'
 It takes the following arguments:
     mysql username
     mysql password
@@ -8,7 +9,7 @@ It takes the following arguments:
 """
 
 import MySQLdb
-from sys import argv as argv
+from sys import argv
 
 
 def db_connect(username, password, database, host="localhost", port=3306):
@@ -46,7 +47,7 @@ if __name__ == '__main__':
     if len(argv) < 4:
         print('Usage: argv[0] <username> <password> <database>')
         exit()
-    command = 'SELECT * FROM states WHERE name LIKE "N%" ORDER BY id'
+    command = 'SELECT * FROM states WHERE name LIKE BINARY "N%" ORDER BY id'
     connection = db_connect(argv[1], argv[2], argv[3])
     cursor = db_cursor(connection)
     rows = db_execute(cursor, command)
