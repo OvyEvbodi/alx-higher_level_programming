@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """This module lists all states from a database
 It takes the following arguments:
     mysql username
@@ -44,7 +46,7 @@ if __name__ == '__main__':
     if len(argv) < 4:
         print('Usage: argv[0] <username> <password> <database>')
         exit()
-    command = 'SELECT * FROM states'
+    command = 'SELECT * FROM states ORDER BY id'
     connection = db_connect(argv[1], argv[2], argv[3])
     cursor = db_cursor(connection)
     rows = db_execute(cursor, command)
