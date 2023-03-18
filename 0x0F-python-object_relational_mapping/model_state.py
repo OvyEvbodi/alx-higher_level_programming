@@ -19,11 +19,11 @@ class State(Base):
         name(str): the name of the state
     """
     __tablename__ = 'states'
-    id = Column(Integer, nullable=False, primary_key=True,
-                Sequence('user_id_seq'))
+    id = Column(Integer, Sequence('user_id_seq'), nullable=False,
+                primary_key=True)
     name = Column(String(128), nullable=False)
 
     def __repr__(self):
         """Returns a string representation of the ``State`` class"""
 
-        return "<State(name='{}'>".format(self.name)
+        return f"<State(name='{self.name}'>"
