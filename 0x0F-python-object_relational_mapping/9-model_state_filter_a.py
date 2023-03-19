@@ -25,7 +25,7 @@ def list_states():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).filter(State.name.match("%a%"))\
+    for state in session.query(State).filter(State.name.like("%a%"))\
             .order_by(State.id).all():
         print(f"{state.id}: {state.name}")
 
