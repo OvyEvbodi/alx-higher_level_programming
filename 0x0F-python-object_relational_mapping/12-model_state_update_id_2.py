@@ -14,6 +14,7 @@ def list_states():
     """Updates a state in the ``hbtn_0e_6_usa`` database"""
     if len(argv) < 4:
         print(f"Usage: {argv[0]} <username> <password> <database>")
+        return
     user = argv[1]
     password = argv[2]
     database = argv[3]
@@ -24,8 +25,9 @@ def list_states():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_obj = session.query(State).filter(id == 2).first()
-    state_obj.name = "New Mexico"
+    state_obj = session.query(State).filter(State.id == 2).first()
+    if state_obj:
+        state_obj.name = "New Mexico"
     session.commit()
 
 
