@@ -20,7 +20,7 @@ def list_states():
     url = f"mysql+mysqldb://{user}:{password}@localhost:3306/{database}"
     engine = create_engine(url)
 
-    Base.metadata.create_engine_all(engine)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
