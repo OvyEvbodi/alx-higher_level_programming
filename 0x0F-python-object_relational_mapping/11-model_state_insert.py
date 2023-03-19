@@ -9,7 +9,7 @@ from sqlalchemy.orm import sessionmaker
 from sys import argv
 
 
-def list_states():
+def add_state():
     """Lists adds a new state to the ``hbtn_0e_6_usa`` database"""
     if len(argv) < 4:
         ('Usage: argv[0] <username> <password> <database>')
@@ -26,10 +26,10 @@ def list_states():
     new_state_obj = State(name="Louisiana")
     session.add(new_state_obj)
     session.commit()
-    new_state = session.query(State.id).filter(State.name == "Louisiana")\
+    new_state_id = session.query(State.id).filter(State.name == "Louisiana")\
         .first()
-    print(State.id)
+    print(new_state_id)
 
 
 if __name__ == '__main__':
-    list_states()
+    add_state()

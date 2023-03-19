@@ -26,6 +26,7 @@ def list_states():
 
     state_obj = session.query(State).filter(id == 2).first()
     state_obj.name = "New Mexico"
+    session.commit()
 
 
 if __name__ == '__main__':
