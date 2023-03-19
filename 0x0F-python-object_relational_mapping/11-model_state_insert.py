@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
-"""This module lists all states from the database ``hbtn_0e_6_usa``
-that contain the letter a
+"""This module adds a new state to the database ``hbtn_0e_6_usa``
 """
 
 from model_state import Base, State
@@ -11,7 +10,7 @@ from sys import argv
 
 
 def list_states():
-    """Lists all the states in the ``hbtn_0e_6_usa`` database"""
+    """Lists adds a new state to the ``hbtn_0e_6_usa`` database"""
     if len(argv) < 4:
         ('Usage: argv[0] <username> <password> <database>')
     user = argv[1]
@@ -24,9 +23,12 @@ def list_states():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).filter(State.name.match("%a%"))\
-        .order_by(State.id).all():
-        print(f"{State.id}: {State.name})
+    new_state_obj = State(name="Louisiana")
+    session.add(new_state_obj)
+    session.commit()
+    new_state = session.query(State.id).filter(State.name == "Louisiana")\
+        .first()
+    print(State.id)
 
 
 if __name__ == '__main__':

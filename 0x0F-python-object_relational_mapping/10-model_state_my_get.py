@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""This module lists all State objects from the database ``hbtn_0e_6_usa``
+"""This module Prints a state in the database ``hbtn_0e_6_usa``
 """
 
 from model_state import Base, State
@@ -9,8 +9,8 @@ from sqlalchemy.orm import sessionmaker
 from sys import argv
 
 
-def list_states():
-    """Lists all the states in the ``hbtn_0e_6_usa`` database"""
+def print_state_id():
+    """Prints a state in the ``hbtn_0e_6_usa`` database"""
     if len(argv) < 5:
         ('Usage: argv[0] <username> <password> <database>')
     user, password = argv[1], argv[2]
@@ -22,7 +22,7 @@ def list_states():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_info = session.query(State).filter(State.name == state).first()
+    state_info = session.query(State.id).filter(State.name == state).first()
     if state_info:
         print(State.id)
     else:
@@ -30,4 +30,4 @@ def list_states():
 
 
 if __name__ == '__main__':
-    list_states()
+    print_state_id()
