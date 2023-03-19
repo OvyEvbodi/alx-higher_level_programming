@@ -23,11 +23,8 @@ def list_states():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    first_state = session.query(State).order_by(State.id).first()
-    if first_state:
-        print(f"{State.id}: {State.name}")
-    else:
-        print("Nothing")
+    for state in session.query(State).filter(State.name.match("a")).order_by(State.id).all():
+        print(f"{State.id}: {State.name})
 
 
 if __name__ == '__main__':
