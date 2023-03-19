@@ -14,6 +14,7 @@ def delete_states():
     """Updates a state in the ``hbtn_0e_6_usa`` database"""
     if len(argv) < 4:
         print(f"Usage: {argv[0]} <username> <password> <database>")
+        return
     user = argv[1]
     password = argv[2]
     database = argv[3]
