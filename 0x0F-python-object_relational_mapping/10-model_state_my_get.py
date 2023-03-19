@@ -12,19 +12,20 @@ from sys import argv
 def print_state_id():
     """Prints a state in the ``hbtn_0e_6_usa`` database"""
     if len(argv) < 5:
-        ('Usage: argv[0] <username> <password> <database>')
+        print(f"Usage: {argv[0]} <username> <password> <database>")
+        return
     user, password = argv[1], argv[2]
     database, state = argv[3], argv[4]
     url = f"mysql+mysqldb://{user}:{password}@localhost:3306/{database}"
     engine = create_engine(url)
 
-    Base.metadata.create_engine_all(engine)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
     state_info = session.query(State.id).filter(State.name == state).first()
     if state_info:
-        print(State.id)
+        print(state_info.id)
     else:
         print("Not found")
 
