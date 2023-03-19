@@ -19,15 +19,16 @@ def delete_states():
     password = argv[2]
     database = argv[3]
     url = f"mysql+mysqldb://{user}:{password}@localhost:3306/{database}"
-    engine = create_engine(url)
+    engine = create_engine(url, pool_pre_ping=True)
 
-    Base.metadata.create_all(engine)
+    Base.metadata.create_all(engine, checkfirst=True)
     Session = sessionmaker(bind=engine)
     session = Session()
 
     for state in session.query(State).filter(State.name.contains('a')).all():
         session.delete(state)
     session.commit()
+    session.close()
 
 
 if __name__ == '__main__':
