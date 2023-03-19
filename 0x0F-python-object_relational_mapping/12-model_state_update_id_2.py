@@ -13,14 +13,14 @@ from sys import argv
 def list_states():
     """Updates a state in the ``hbtn_0e_6_usa`` database"""
     if len(argv) < 4:
-        ('Usage: argv[0] <username> <password> <database>')
+        print(f"Usage: {argv[0]} <username> <password> <database>")
     user = argv[1]
     password = argv[2]
     database = argv[3]
     url = f"mysql+mysqldb://{user}:{password}@localhost:3306/{database}"
     engine = create_engine(url)
 
-    Base.metadata.create_engine_all(engine)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
