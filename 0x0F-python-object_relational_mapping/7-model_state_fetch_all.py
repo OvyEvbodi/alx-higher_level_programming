@@ -12,7 +12,7 @@ from sys import argv
 def list_states():
     """Lists all the states in the ``hbtn_0e_6_usa`` database"""
     if len(argv) < 4:
-        ('Usage: argv[0] <username> <password> <database>')
+        print(f"Usage: {argv[0]} <username> <password> <database>")
         return
     user = argv[1]
     password = argv[2]
