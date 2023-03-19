@@ -27,7 +27,7 @@ def list_states():
 
     for state in session.query(State).filter(State.name.match("%a%"))\
             .order_by(State.id).all():
-        print(f"{state.id}: {state.name})
+        print(f"{state.id}: {state.name}")
 
 
 if __name__ == '__main__':
