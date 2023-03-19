@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""This module lists all State objects from the database ``hbtn_0e_6_usa``
+"""This module lists the first state from the database ``hbtn_0e_6_usa``
 """
 
 from model_state import Base, State
@@ -9,26 +9,27 @@ from sqlalchemy.orm import sessionmaker
 from sys import argv
 
 
-def list_states():
-    """Lists all the states in the ``hbtn_0e_6_usa`` database"""
+def list_state():
+    """Lists the first state in the ``hbtn_0e_6_usa`` database"""
     if len(argv) < 4:
-        ('Usage: argv[0] <username> <password> <database>')
+        print(f"Usage: {argv[0]} <username> <password> <database>")
+        return
     user = argv[1]
     password = argv[2]
     database = argv[3]
     url = f"mysql+mysqldb://{user}:{password}@localhost:3306/{database}"
     engine = create_engine(url)
 
-    Base.metadata.create_engine_all(engine)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
     first_state = session.query(State).order_by(State.id).first()
     if first_state:
-        print(f"{State.id}: {State.name}")
+        print(f"{first_state.id}: {first_state.name}")
     else:
         print("Nothing")
 
 
 if __name__ == '__main__':
-    list_states()
+    list_state()
