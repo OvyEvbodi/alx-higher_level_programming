@@ -1,6 +1,6 @@
 ### Python - Network
 ***
-- The objectives of this project were:<br>
+- The objectives of this project were to know:<br>
 - What a URL is
 - What HTTP is
 - How to read a URL
