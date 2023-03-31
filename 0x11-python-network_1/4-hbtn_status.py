@@ -4,7 +4,9 @@
 
 import requests as req
 
-url = "https://alx-intranet.hbtn.io/status"
-res = req.get(url)
 
-print(f"Body response:\n\t- type: {type(res.text)}\n\t- content: {res.text}")
+if __name__ == "__main__":
+    url = "https://alx-intranet.hbtn.io/status"
+    r = req.get(url)
+
+    print(f"Body response:\n\t- type: {type(r.text)}\n\t- content: {r.text}")
