@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Takes 2 arguments in order to solve the given challenge
+"""Gets 10 most recent commits on a repo
 """
 
 import requests as req
