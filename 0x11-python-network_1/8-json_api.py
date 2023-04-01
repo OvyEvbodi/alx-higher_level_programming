@@ -13,8 +13,8 @@ if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
     msg = ""
 
-    if argv[2]:
-        msg = argv[2]
+    if len(argv) >= 1:
+        msg = argv[1]
     res = req.post(url, data={"q": msg})
 
     try:
