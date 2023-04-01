@@ -11,7 +11,5 @@ from sys import argv
 if __name__ == "__main__":
     url = argv[1]
     res = req.get(url)
-    try:
-        print(res.headers["X-Request-Id"])
-    except Error:
-        pass
+
+    print(res.headers.get('X-Request-Id'))
