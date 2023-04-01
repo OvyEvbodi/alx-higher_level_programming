@@ -9,7 +9,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    url = arggv[1]
+    url = argv[1]
     res = req.get(url)
     code = res.status_code
 
