@@ -7,8 +7,7 @@ import requests as req
 from sys import argv
 
 if __name__ == '__main__':
-    repo_name = argv[1]
-    owner = argv[2]
+    repo_name, owner = argv[1], argv[2]
     url = f"https://api.github.com/repos/{owner}/{repo_name}/commits"
     headers = {"Accept": "application/vnd.github+json"}
 
