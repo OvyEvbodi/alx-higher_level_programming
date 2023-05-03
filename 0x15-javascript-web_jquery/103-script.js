@@ -5,6 +5,13 @@ const hello = $('div#hello');
 
 $('document').ready(function () {
   $('input#btn_translate').click(getTranslation);
+  $('input#language_code').focus(function () {
+    $(this).keydown(function (e) {
+      if (e.keyCode === 13) {
+        getTranslation();
+      }
+    })
+  })
 });
 
 function getTranslation () {
