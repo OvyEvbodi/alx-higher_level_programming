@@ -4,13 +4,14 @@
 const ulList = $('ul#list_movies');
 const url = 'https://swapi-api.alx-tools.com/api/films/?format=json';
 
-listTitle = (movie) => {
+const listTitle = (movie) => {
   let listItem = $('<li></>').text(movie.title);
   listItem.appendTo(ulList);
 };
-starWarsMovies = (url) => {
-  $.get(url, (data) => {
-    data.results.map(listTitle)
+const starWarsMovies = (url) => {
+  $.get(url, (data, textStatus) => {
+    if (textStatus === 'success')
+      data.results.map(listTitle)
   })
 };
 

@@ -4,6 +4,6 @@
 const header = $('header');
 const updateDiv = $('div#update_header');
 
-changeColor = () => header.text('New Header!!!');
+const changeColor = () => header.text('New Header!!!');
 updateDiv.on('click', changeColor);
 

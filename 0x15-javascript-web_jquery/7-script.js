@@ -4,9 +4,10 @@
 const url = 'https://swapi-api.alx-tools.com/api/people/5/?format=json';
 const charDiv = $('div#character')
 
-starWarsChar = (url) => {
-  $.get(url, (data) => {
-    charDiv.text(data.name);
+const starWarsChar = (url) => {
+  $.get(url, (data, textStatus) => {
+    if (textStatus === 'success')
+      charDiv.text(data.name);
   })
 };
 

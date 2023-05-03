@@ -4,9 +4,9 @@
 const header = $('header');
 const redDiv = $('div#toggle_header');
 
-toggleElementClass = () => {
-    header.toggleClass('red');
-    header.toggleClass('green');
+const toggleElementClass = () => {
+  header.toggleClass('red');
+  header.toggleClass('green');
 };
 
 redDiv.on('click', toggleElementClass);

@@ -4,5 +4,5 @@
 const header = $('header');
 const redDiv = $('div#red_header');
 
-changeColor = () => header.css('color', '#FF0000');
+const changeColor = () => header.css('color', '#FF0000');
 redDiv.on('click', changeColor);
