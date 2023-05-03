@@ -11,7 +11,6 @@ listTitle = (movie) => {
 starWarsMovies = (url) => {
   $.get(url, (data) => {
     data.results.map(listTitle)
-    console.log(data);
   })
 };
 
