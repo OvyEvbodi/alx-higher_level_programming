@@ -4,8 +4,6 @@ const ulList = $('ul.my_list');
 const liDiv = $('div#add_item');
 const listElement = $('<li></li>').text('Item');
 
-appendElement = () => {
-  ulList.append(listElement);
-};
+appendElement = () => ulList.append(listElement);
 
 liDiv.on('click', appendElement);
